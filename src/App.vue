@@ -6,7 +6,8 @@
   <change-counter></change-counter>
 </base-container>
 <BaseContainer>
-<UserAuth title="auth"></UserAuth>
+  <UserAuth title="auth"></UserAuth>
+  <p>{{ getAuth }}</p>
 </BaseContainer>
 </template>
 
@@ -34,6 +35,9 @@ export default {
     computed: {
         isAuth(){
            return this.$store.getters.userIsAuthenticated
+        },
+        getAuth(){
+          return this.$store.getters.getAuth
         }
     }
 };
